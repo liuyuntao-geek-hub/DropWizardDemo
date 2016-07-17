@@ -1,0 +1,21 @@
+Step 24 - Eclipse IDE with Maven
+	
+	Start eClipse: 
+	
+	- Help -> check update -> install update = this will make sure the Eclipse has the latest update
+	- Help -> install new Software (3.5) -> 
+	- Help -> Opening Eclipse Marketplace (3.6) -> search Maven
+
+Step 25 - import Maven project into Eclipse
+	import -> existing maven Project -> the place having pom.xml
+	Then -> Java Build Path will automatically add the Maven Dependencies according to pom.xml
+	
+	Run -> Maven Build -> goal = package 
+	=> same as running it from local
+
+
+Step 26 - use the local PC maven or eClipse embeded maven
+	-> windows -> preference -> maven -> installation = You can provide home directory of the maven installed on PC
+		=> User Settings: Local Repository = E:\java\Maven\eClipseRepository (The place you want as your maven Repository)
+		
+		
