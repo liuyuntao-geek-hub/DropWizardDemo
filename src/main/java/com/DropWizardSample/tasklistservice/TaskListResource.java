@@ -20,8 +20,8 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
 
  */
-@Path("/task-list")
-@Produces(MediaType.APPLICATION_JSON)
+@Path("/DropWizard")
+//@Produces(MediaType.APPLICATION_JSON)
 public class TaskListResource {
     private final int maxLength;
     private final AtomicLong counter;
@@ -33,6 +33,8 @@ public class TaskListResource {
         this.counter = new AtomicLong();
     }
 
+    @Path("/task-list")
+    @Produces(MediaType.APPLICATION_JSON)
     @GET
     @Timed
     public List<Task> listTasks(@QueryParam("contains") Optional<String> contains) {
@@ -62,4 +64,34 @@ public class TaskListResource {
         }
         return tasks;
     }
+    
+    
+    
+    @Path("/employee") 
+    @GET   // this method process GET request from client
+    //@Produces("application/json")   // sends JSON
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getJson(@QueryParam("empno")  int empno) {  // empno represents the empno sent from client   
+      switch(empno) {
+          case 1 :
+              return "{'name':'George Koch', 'age':58}";
+          case 2:
+              return "{'name':'Peter Norton', 'age':50}";
+          default:
+              return "{'name':'unknown', 'age':-1}";
+      } // end of switch
+   } // end of getJson()
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
